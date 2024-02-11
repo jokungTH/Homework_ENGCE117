@@ -10,15 +10,11 @@ struct studentNode {
  struct studentNode *back ;
 } ;
 
-
-
 struct studentNode *AddNode ( struct studentNode **walk ,char nameadd[], int ageadd, char sexadd, float gpaadd ); // addnode
 void InsNode (struct studentNode *walk , char nameadd[], int ageadd, char sexadd, float gpaadd, struct studentNode **begin); // insnode
 void DelNode(struct studentNode **walk, struct studentNode **begin ){
 	
 	struct studentNode *temp;
-	
-
 	
 	if( ( *walk ) -> back != NULL ) {
 		( *walk ) -> back -> next = ( *walk ) -> next;
@@ -41,10 +37,7 @@ void DelNode(struct studentNode **walk, struct studentNode **begin ){
 	
 }
 
-
 void ShowAll( struct studentNode *walk ) ;  // show
-
-
 
 int main() {
  struct studentNode *start, *now ;
@@ -66,7 +59,6 @@ int main() {
  return 0 ;
 }//end function
 
-
 void InsNode (struct studentNode *walk , char nameadd[], int ageadd, char sexadd, float gpaadd, struct studentNode **begin){
 	
 	if(walk -> back != NULL ){
@@ -78,7 +70,6 @@ void InsNode (struct studentNode *walk , char nameadd[], int ageadd, char sexadd
 		walk -> back -> next ->back = walk->back;
 		walk -> back = walk -> back -> next;
 	
-		
 	} else {
 		
 		*begin = new struct studentNode ;
@@ -89,11 +80,7 @@ void InsNode (struct studentNode *walk , char nameadd[], int ageadd, char sexadd
 		walk -> back = *begin ;	
 	}
 	
-	
 }
-
-
-
 
 struct studentNode *AddNode ( struct studentNode **walk ,char nameadd[], int ageadd, char sexadd, float gpaadd ){
 		
@@ -119,10 +106,6 @@ struct studentNode *AddNode ( struct studentNode **walk ,char nameadd[], int age
 		
 }	
 	
-
-
-
-
 void ShowAll( struct studentNode *walk ) {
  while( walk != NULL ) {
   printf( " %s ", walk->name) ;
@@ -133,5 +116,3 @@ void ShowAll( struct studentNode *walk ) {
  }//end while
  printf( "\n" ) ;
 }//end function
-
-
